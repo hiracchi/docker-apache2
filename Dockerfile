@@ -8,13 +8,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 #
-RUN mkdir -p /work /work/sites-available /work/sites-enabled /work/html
-RUN cp /etc/apache2/sites-available/* /work/sites-available/
-RUN cp /etc/apache2/sites-enabled/* /work/sites-enabled/
-RUN cp /var/www/html/* /work/html
-RUN ln -snf /work/sites-available /etc/apache2/sites-available && \
-    ln -snf /work/sites-enabled /etc/apache2/sites-enabled && \
-    ln -snf /work/html /var/www/html
+#RUN mkdir -p /work /work/sites-available /work/sites-enabled /work/html
+#RUN cp /etc/apache2/sites-available/* /work/sites-available/
+#RUN cp /etc/apache2/sites-enabled/* /work/sites-enabled/
+#RUN cp /var/www/html/* /work/html
+#RUN ln -snf /work/sites-available /etc/apache2/sites-available && \
+#    ln -snf /work/sites-enabled /etc/apache2/sites-enabled && \
+#    ln -snf /work/html /var/www/html
 
 RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl
